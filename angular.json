@@ -50,6 +50,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -145,6 +146,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "superette22"
+    }
+  },
+  "defaultProject": "superette22",
+  "cli": {
+    "analytics": "9746b6ac-2d38-4d73-a29b-11738186ba1e"
+  }
 }

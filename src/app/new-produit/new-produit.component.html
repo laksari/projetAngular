@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+   <div class="col-lg-6 ">
+     <app-view-courses></app-view-courses>
+   </div>
+    <div class="col-lg-6">
+      <h2 c>Ajouter un produit</h2>
+      <form [formGroup]="newProduitForm" (ngSubmit)="onSubmitForm()">
+       <div class="form-group">
+         <label for="libelle">Libelle</label>
+         <input type="text" id="libelle" class="form-control" formControlName="libelle">
+       </div>
+        <div class="form-group">
+          <label for="quantite">Quantite</label>
+          <input type="text" id="quantite" class="form-control" formControlName="quantite">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
