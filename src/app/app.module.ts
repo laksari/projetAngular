@@ -12,9 +12,13 @@ import { NewProduitComponent } from './new-produit/new-produit.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DeleteProduitComponent } from './delete-produit/delete-produit.component';
+import { EditProduitComponent } from './edit-produit/edit-produit.component';
 
 const route: Routes = [{path: 'lstCourse', component: ViewCoursesComponent},
                         {path: 'ajoutPdt', component: NewProduitComponent},
+                        {path: 'deletePdt', component: DeleteProduitComponent},
+                        {path: 'editPdt', component: EditProduitComponent},
                         {path: '', component: ViewCoursesComponent}];
 
 @NgModule({
@@ -24,7 +28,9 @@ const route: Routes = [{path: 'lstCourse', component: ViewCoursesComponent},
     ViewCoursesComponent,
     NewProduitComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    DeleteProduitComponent,
+    EditProduitComponent
   ],
   imports: [
     BrowserModule,

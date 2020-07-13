@@ -1,14 +1,14 @@
 
   <h2>Liste des courses</h2>
 
-
-
-<table class="table table-hover">
+<table class="table table-striped">
   <thead>
   <tr>
     <th>id</th>
     <th>Libelle</th>
     <th>Quantite</th>
+    <th *ngIf="etat==='delete'"></th>
+    <th *ngIf="etat==='update'"></th>
   </tr>
   </thead>
   <tbody>
@@ -21,6 +21,8 @@
       <td>{{pCourse.id}}</td>
       <td>{{pCourse.libelle}}</td>
       <td>{{pCourse.quantite}}</td>
+      <td *ngIf="etat==='delete'"><button class="btn btn-success" (click)="deletePrd(pCourse.id)">Supprimer</button></td>
+      <td *ngIf="etat==='update'"><button class="btn btn-success" (click)="updatePrd(pCourse)">Modifier</button></td>
     </tr>
 
 

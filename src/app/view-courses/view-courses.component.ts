@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {CourseService} from '../services/course.service';
 import {Subscription} from 'rxjs';
+import {Course} from '../models/course.model';
 
 @Component({
   selector: 'app-view-courses',
@@ -11,6 +12,7 @@ export class ViewCoursesComponent implements OnInit, OnDestroy {
 
   courses: any[];
   coursesSubscription: Subscription;
+  @Input() etat: string;
 
 
 
@@ -30,6 +32,14 @@ constructor(private courseService: CourseService) { }
 
   ngOnDestroy(): void {
     this.coursesSubscription.unsubscribe();
+  }
+
+  deletePrd(id: number){
+    this.courseService.deletePrd(id);
+  }
+
+  updatePrd(pCourse: Course){
+    this.courseService.change(pCourse);
   }
 
 

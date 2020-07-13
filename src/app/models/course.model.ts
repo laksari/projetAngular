@@ -1,5 +1,5 @@
 export class Course{
-  constructor(public id?: number, public libelle: string, public quantite: number ){
+  constructor(public id?: number, public libelle?: string, public quantite?: number ){
   }
 
 }
