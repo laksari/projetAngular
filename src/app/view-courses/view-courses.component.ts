@@ -14,6 +14,8 @@ export class ViewCoursesComponent implements OnInit, OnDestroy {
   coursesSubscription: Subscription;
   @Input() etat: string;
 
+  elements = [1,2,3,4,5];
+
 
 
 constructor(private courseService: CourseService) { }

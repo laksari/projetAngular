@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CourseService} from '../services/course.service';
 import {Course} from '../models/course.model';
 
@@ -26,8 +26,8 @@ export class NewProduitComponent implements OnInit {
 
   initForm(){
     this.newProduitForm = this.formBuilder.group({
-      libelle: [''],
-      quantite: ['']
+      libelle: ['', Validators.required],
+      quantite: ['', [Validators.required, Validators.pattern("^[0-9]+$")]]
     });
   }
 

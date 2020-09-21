@@ -1,10 +1,10 @@
 
-  <h2>Liste des courses</h2>
+  <h2 ngClass="text-primary" >Liste des courses</h2>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
   <tr>
-    <th>id</th>
+    <th class="hidden">id</th>
     <th>Libelle</th>
     <th>Quantite</th>
     <th *ngIf="etat==='delete'"></th>
@@ -17,11 +17,11 @@
   <app-course *ngFor="let pCourse of courses" [id]="pCourse.id" [libelle]="pCourse.libelle" [quantite]="pCourse.quantite">
   </app-course>
    -->
-    <tr *ngFor="let pCourse of courses">
-      <td>{{pCourse.id}}</td>
+    <tr *ngFor="let pCourse of courses; let i = index" [ngClass]="(i%3)==0?'info':(i%3)==1?'success':'danger'">
+      <td class="hidden">{{pCourse.id}}</td>
       <td>{{pCourse.libelle}}</td>
       <td>{{pCourse.quantite}}</td>
-      <td *ngIf="etat==='delete'"><button class="btn btn-success" (click)="deletePrd(pCourse.id)">Supprimer</button></td>
+      <td *ngIf="etat==='delete'"><span class="glyphicon glyphicon-remove" (click)="deletePrd(pCourse.id)"></span></td>
       <td *ngIf="etat==='update'"><button class="btn btn-success" (click)="updatePrd(pCourse)">Modifier</button></td>
     </tr>
 
@@ -29,5 +29,6 @@
 
  </tbody>
 </table>
+
 
 

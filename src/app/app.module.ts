@@ -14,12 +14,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { DeleteProduitComponent } from './delete-produit/delete-produit.component';
 import { EditProduitComponent } from './edit-produit/edit-produit.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
-const route: Routes = [{path: 'lstCourse', component: ViewCoursesComponent},
+const route: Routes = [ {path: 'accueil', component: AccueilComponent},
+                        {path: 'lstCourse', component: ViewCoursesComponent},
                         {path: 'ajoutPdt', component: NewProduitComponent},
                         {path: 'deletePdt', component: DeleteProduitComponent},
                         {path: 'editPdt', component: EditProduitComponent},
-                        {path: '', component: ViewCoursesComponent}];
+                        {path: '', component: AccueilComponent}];
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ const route: Routes = [{path: 'lstCourse', component: ViewCoursesComponent},
     NavbarComponent,
     SidebarComponent,
     DeleteProduitComponent,
-    EditProduitComponent
+    EditProduitComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

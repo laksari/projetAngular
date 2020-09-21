@@ -6,18 +6,25 @@
     </div>
     <div class="col-lg-6">
       <h2 c>Modification d'un produit</h2>
-      <form [formGroup]="editProduitForm" (ngSubmit)="onSubmitForm()">
+      <form [formGroup]="editProduitForm" (ngSubmit)="onSubmitForm()" class="form-horizontal">
         <div class="form-group">
-          <label for="libelle">Libelle</label>
+          <label for="libelle" class="col-sm-2 control-label">Libelle</label>
+          <div class="col-lg-10">
           <input type="text" id="libelle" class="form-control" formControlName="libelle" [(ngModel)]="course.libelle">
+          </div>
         </div>
         <div class="form-group">
-          <label for="quantite">Quantite</label>
+          <label for="quantite" class="col-sm-2 control-label">Quantite</label>
+          <div class="col-lg-10">
           <input type="text" id="quantite" class="form-control" formControlName="quantite" [(ngModel)]="course.quantite">
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <div class="col-sm-offset-2">
+        <button type="submit" class="btn btn-primary" [disabled]="editProduitForm.invalid">Enregistrer</button>
+      </div>
       </form>
-
+         <br>
+      <p class="help-block">Selectionner un element pour le modifier</p>
     </div>
 
   </div>

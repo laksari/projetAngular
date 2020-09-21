@@ -1,20 +1,28 @@
+<div class="container navigation">
+<div class="row navigation">
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Site de commerce</a>
-    </div>
+  
+  <ul class="logo list-inline">
+    <li>Site de commerce</li>
+    <li><img src="assets/panier.png" class="img-responsive img-rounded" style="width:20%"></li>
+    
+  </ul>
+    <div class="navbar-collapse collapse navbar-right">
     <ul class="nav navbar-nav">
-      <li><a routerLink="lstCourse">Home</a></li>
-      <li><a routerLink="lstCourse">Liste des courses</a></li>
-      <li><a routerLink="ajoutPdt">Ajout d'un produit</a></li>
-      <li><a routerLink="deletePdt">Suppression d'un produit</a></li>
-      <li><a routerLink="editPdt">Modification d'un produit</a></li>
+      <li routerLinkActive="active"><a routerLink="accueil">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="lstCourse">Liste des courses</a></li>
+      <li routerLinkActive="active"><a routerLink="ajoutPdt">Ajout d'un produit</a></li>
+      <li routerLinkActive="active"><a routerLink="deletePdt">Suppression d'un produit</a></li>
+      <li routerLinkActive="active"><a routerLink="editPdt">Modification d'un produit</a></li>
     </ul>
   </div>
 </nav>
+</div>
+</div>
 
 <div class="container">
   <div class="row">
+    <div class="text-right"><h5>Date :{{date|date:'short'}} </h5></div>
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CourseService} from '../services/course.service';
 import {Course} from '../models/course.model';
 
@@ -37,8 +37,8 @@ export class EditProduitComponent implements OnInit {
   initForm(){
     //this.course = this.courseService.pCourse;
     this.editProduitForm = this.formBuilder.group({
-      libelle: [''],
-      quantite: ['']
+      libelle: ['', Validators.required],
+      quantite: ['', Validators.required]
     });
   }
 
